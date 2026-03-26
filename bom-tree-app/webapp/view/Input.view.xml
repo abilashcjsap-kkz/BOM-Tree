@@ -1,0 +1,30 @@
+<mvc:View
+  controllerName="com.example.bomtree.controller.Input"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:f="sap.ui.layout.form">
+  <Page title="BOM Selection">
+    <content>
+      <VBox class="sapUiLargeMargin">
+        <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12">
+          <Label text="Material (MATNR)" />
+          <Input value="{view>/filters/Matnr}" maxLength="40" />
+
+          <Label text="Plant (WERKS)" />
+          <Input value="{view>/filters/Werks}" maxLength="4" />
+
+          <Label text="Alternative BOM (STLAL)" />
+          <Input value="{view>/filters/Stlal}" maxLength="2" />
+
+          <Label text="BOM Usage (STLAN)" />
+          <Input value="{view>/filters/Stlan}" maxLength="1" />
+        </f:SimpleForm>
+
+        <Toolbar>
+          <ToolbarSpacer />
+          <Button text="Show BOM Tree" type="Emphasized" press="onShowBom" />
+        </Toolbar>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>
