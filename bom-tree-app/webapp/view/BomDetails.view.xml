@@ -1,0 +1,61 @@
+<mvc:View
+  controllerName="com.example.bomtree.controller.BomDetails"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:t="sap.ui.table">
+  <Page title="BOM Tree Details" showNavButton="true" navButtonPress="onNavBack">
+    <subHeader>
+      <Toolbar>
+        <Title text="{view>/headerText}" level="H4" />
+        <ToolbarSpacer />
+        <Button text="Refresh" icon="sap-icon://refresh" press="onRefresh" />
+      </Toolbar>
+    </subHeader>
+    <content>
+      <t:TreeTable
+        id="bomTreeTable"
+        rows="{path: 'tree>/nodes', parameters: {arrayNames:['children']}}"
+        selectionMode="None"
+        visibleRowCount="15"
+        enableColumnReordering="true">
+
+        <t:columns>
+          <t:Column width="12rem">
+            <Label text="Component" />
+            <t:template>
+              <Text text="{tree>Idnrk}" />
+            </t:template>
+          </t:Column>
+
+          <t:Column width="18rem">
+            <Label text="Description" />
+            <t:template>
+              <Text text="{tree>Ojtxp}" />
+            </t:template>
+          </t:Column>
+
+          <t:Column width="8rem" hAlign="End">
+            <Label text="Quantity" />
+            <t:template>
+              <Text text="{tree>Mnglg}" />
+            </t:template>
+          </t:Column>
+
+          <t:Column width="8rem">
+            <Label text="UoM" />
+            <t:template>
+              <Text text="{tree>Meins}" />
+            </t:template>
+          </t:Column>
+
+          <t:Column width="5rem" hAlign="Center">
+            <Label text="Stufe" />
+            <t:template>
+              <Text text="{tree>Stufe}" />
+            </t:template>
+          </t:Column>
+        </t:columns>
+      </t:TreeTable>
+    </content>
+  </Page>
+</mvc:View>

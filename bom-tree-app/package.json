@@ -1,0 +1,12 @@
+{
+  "name": "bom-tree-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve -o index.html",
+    "lint:js": "node --check webapp/controller/Input.controller.js && node --check webapp/controller/BomDetails.controller.js"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3.11.0"
+  }
+}
